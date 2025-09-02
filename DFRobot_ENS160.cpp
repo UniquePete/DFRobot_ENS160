@@ -127,6 +127,14 @@ int DFRobot_ENS160_I2C::begin(void)
   return DFRobot_ENS160::begin();   // Use the initialization function of the parent class
 }
 
+int DFRobot_ENS160_I2C::begin(TwoWire *pWire, uint8_t i2cAddr)
+{
+  _deviceAddr = i2cAddr;
+  _pWire = pWire;
+  _pWire->begin();   // Wire.h(I2C)library function initialize wire library
+  return DFRobot_ENS160::begin();   // Use the initialization function of the parent class
+}
+
 void DFRobot_ENS160_I2C::writeReg(uint8_t reg, const void* pBuf, size_t size)
 {
   if(pBuf == NULL) {
