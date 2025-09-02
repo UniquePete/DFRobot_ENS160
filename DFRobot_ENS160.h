@@ -179,6 +179,7 @@ public:
    * @retval -2 ERR_IC_VERSION
    */
   virtual int begin(void);
+  virtual int begin(TwoWire *pWire, uint8_t i2cAddr);
 
 /************************** Config function ******************************/
   /**
