@@ -66,14 +66,14 @@ then open the examples folder and run the demo in the folder.
   /**
    * @fn begin
    * @brief Init function with parameters
-   * @param &wire I2C bus
+   * @param *pWire I2C bus
    * @param i2cAddr I2C device address
    * @return int type, indicates returning init status
    * @retval 0 NO_ERROR
    * @retval -1 ERR_DATA_BUS
    * @retval -2 ERR_IC_VERSION
    */
-  virtual int begin(TwoWire &wire, uint8_t i2cAddr);
+  virtual int begin(TwoWire *pWire, uint8_t i2cAddr);
 
   /**
    * @fn setPWRMode
